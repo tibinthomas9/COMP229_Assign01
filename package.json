@@ -1,0 +1,19 @@
+{
+  "name": "comp229_assign01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tibinthomas9/COMP229_Assign01.git"
+  },
+  "author": "Tibin Thomas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tibinthomas9/COMP229_Assign01/issues"
+  },
+  "homepage": "https://github.com/tibinthomas9/COMP229_Assign01#readme"
+}
