@@ -3,9 +3,16 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <%- include('../views/partials/head'); %>
   </head>
   <body>
+    <header>
+      <%- include('../views/partials/header'); %>
+  </header>
     <h1><%= title %></h1>
-    <p>Welcom <%= title %></p>
+    <p>Welcome tib <%= title %></p>
+    <footer>
+      <%- include('../views/partials/footer'); %>
+  </footer>
   </body>
 </html>
