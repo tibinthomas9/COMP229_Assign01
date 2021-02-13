@@ -39,7 +39,7 @@ app.use(function(err, req, res, next) {
 });
 let port = process.env.PORT;
 if (port == null || port == "") {
-    port = 5000;
+    port = 4004;
 }
 app.listen(port, () => {
     console.log('Listening to port 3000.');

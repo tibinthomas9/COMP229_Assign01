@@ -2,15 +2,30 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <!--Head-->
     <%- include('../views/partials/head'); %>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
     <header>
-      <%- include('../views/partials/header'); %>
+    <!--Navigation-->
+      <%- include('../views/partials/navbar', {active: "home"}); %>
   </header>
-    <h1><%= title %></h1>
-    <p>Welcome tib <%= title %></p>
+  
+  <!--Body-->
+
+    <div class="jumbotron">
+      <h1 class="display-4 text-dark">Hi, <small class="font-italic">Tibin here!</p></h1>
+      <p class="lead">I am a software engineering student at Centenial College. This website is developed to demonstrate my web development skills!</p>
+      <hr class="my-4">
+      <p>To know more about me click the button below</p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#" role="button">About me</a>
+      </p>
+    </div>
+    
+<!--Footer-->
     <footer>
       <%- include('../views/partials/footer'); %>
   </footer>

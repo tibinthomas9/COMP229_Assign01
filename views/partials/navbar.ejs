@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light  style="background-color: #e3f2fd;">
+
+    <a class="navbar-brand" href="#">
+        <img src="/images/TT.png" width="30" height="30" class="rounded" alt="Tibin Thomas"">
+        Tibin Thomas
+      </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+      <div class="navbar-nav  ms-auto">
+        <a <%if(active=="home"){%>class="nav-item nav-link active"<% } else { %> class="nav-item nav-link" <% } %>
+            href="home">Home</a>
+        <a <%if(active=="aboutme"){%>class="nav-item nav-link active"<% } else { %> class="nav-item nav-link" <% } %>
+                href="aboutme">About me</a>
+        <a <%if(active=="projects"){%>class="nav-item nav-link active"<% } else { %> class="nav-item nav-link" <% } %>
+                    href="projects">Projects</a>
+        <a <%if(active=="services"){%>class="nav-item nav-link active"<% } else { %> class="nav-item nav-link" <% } %>
+            href="services">Services</a>
+        <a <%if(active=="contactme"){%>class="nav-item nav-link active"<% } else { %> class="nav-item nav-link" <% } %>
+                href="contactme">Contact me</a>
+
+      </div>
+    </div>
+  </nav>
