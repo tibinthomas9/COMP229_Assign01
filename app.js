@@ -1,3 +1,9 @@
+// 
+//  FileName: app.js
+//  Name: Tibin Thomas
+//  Student ID:301160586
+//  Purpose: Entry point of app
+//
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
