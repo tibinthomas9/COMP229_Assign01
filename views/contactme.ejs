@@ -18,12 +18,6 @@
 </head>
 
 <body>
-  <script>
-    function sendAction(){
-      console.log("Send!"); 
-      window.location.href = "/home";
-    }
-  </script>
   <header>
     <!--Navigation-->
     <%- include('../views/partials/navbar', {active: "contactme" }); %>
@@ -61,27 +55,27 @@
         <!-- Contact Me Section-->
         <div class="col-sm-8">
           <h1 style="color:black;"> Message me </h1>
-          <form onsubmit="func1()">
+          <form  action="/home" method = "get">
             <div class="form-row">
               <div class="col">
                 <label for="fnameText">First name</label>
-                <input type="text" class="form-control" id="fnameText" placeholder="">
+                <input type="text" class="form-control" id="fnameText" placeholder="" required> 
               </div>
               <div class="col">
                 <label for="lnameText">Last name</label>
-                <input type="text" class="form-control" id="lnameText" placeholder="">
+                <input type="text" class="form-control" id="lnameText" placeholder="" required>
               </div>
             </div>
             <div class="form-group">
               <label for="emailText">Email address</label>
-              <input type="email" class="form-control" id="emailText" placeholder="name@example.com">
+              <input type="email" class="form-control" id="emailText" placeholder="name@example.com" required>
             </div>
             <div class="form-group">
               <label for="messageText">Message</label>
-              <textarea class="form-control" id="messageText" rows="3"></textarea>
+              <textarea class="form-control" id="messageText" rows="3" required minlength="5"></textarea>
             </div>
             <div class="text-right">
-              <button type="button" onclick="sendAction()" class="btn btn-primary">Send</button>
+              <button type="submit" class="btn btn-primary" >Send</button>
             </div>
           </form>
         </div>
