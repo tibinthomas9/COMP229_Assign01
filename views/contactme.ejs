@@ -8,63 +8,94 @@
 <html>
 
 <head>
-    <title>
-        <%= title %>
-    </title>
+  <title>
+    <%= title %>
+  </title>
 
-    <!--Head-->
-    <%- include('../views/partials/head'); %>
-        <link rel='stylesheet' href='/stylesheets/style.css' />
+  <!--Head-->
+  <%- include('../views/partials/head'); %>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 
 <body>
-    <header>
-        <!--Navigation-->
-        <%- include('../views/partials/navbar', {active: "contactme" }); %>
+  <script>
+    function sendAction(){
+      console.log("Send!"); 
+      window.location.href = "/home";
+    }
+  </script>
+  <header>
+    <!--Navigation-->
+    <%- include('../views/partials/navbar', {active: "contactme" }); %>
 
-    </header>
+  </header>
 
-    <!--Body-->
-    <div class="h-100 d-flex justify-content-center align-items-center ">
-        <div class=" w-75 my-5 ">
-            <form>
-                <div class="form-group">
-                  <label for="exampleFormControlInput1">Email address</label>
-                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                </div>
-                <div class="form-group">
-                  <label for="exampleFormControlSelect1">Example select</label>
-                  <select class="form-control" id="exampleFormControlSelect1">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="exampleFormControlSelect2">Example multiple select</label>
-                  <select multiple class="form-control" id="exampleFormControlSelect2">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="exampleFormControlTextarea1">Example textarea</label>
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
-              </form>
+  <!--Body-->
+  <div class="h-100 d-flex justify-content-center align-items-center ">
+    <div class=" w-75 my-5 ">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card">
+            <!--My Contact Information Section-->
+            <div class="card-header">
+              My Contact Information
+            </div>
+            <div class="card-body">
+              <p class="card-text"><b>Email:</b> tibinmutholy@gmail.com</p>
+              <p class="card-text"><b>Phone:</b> +91 8547643993</p>
+              <p class="card-text"><b>Linked In:</b> <a
+                  href="https://www.linkedin.com/in/tibinthomas9/">tibinthomas9</a> </p>
+              <p class="card-text">
+                <b>Address:</b>
+                Mutholil (h),
+                Kanchiyar p.o,
+                Pallikavala,
+                Idukki district,
+                Kerala, India
+                PIN: 685511
+              </p>
+            </div>
+
+          </div>
         </div>
+        <!-- Contact Me Section-->
+        <div class="col-sm-8">
+          <h1 style="color:black;"> Message me </h1>
+          <form onsubmit="func1()">
+            <div class="form-row">
+              <div class="col">
+                <label for="fnameText">First name</label>
+                <input type="text" class="form-control" id="fnameText" placeholder="">
+              </div>
+              <div class="col">
+                <label for="lnameText">Last name</label>
+                <input type="text" class="form-control" id="lnameText" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="emailText">Email address</label>
+              <input type="email" class="form-control" id="emailText" placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+              <label for="messageText">Message</label>
+              <textarea class="form-control" id="messageText" rows="3"></textarea>
+            </div>
+            <div class="text-right">
+              <button type="button" onclick="sendAction()" class="btn btn-primary">Send</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
     </div>
+  </div>
 
 
-    <!--Footer-->
-    <footer>
-        <%- include('../views/partials/footer'); %>
-    </footer>
+  <!--Footer-->
+  <footer>
+    <%- include('../views/partials/footer'); %>
+  </footer>
+  
 </body>
 
 </html>
