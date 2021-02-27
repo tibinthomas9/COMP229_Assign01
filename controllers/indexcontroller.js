@@ -45,7 +45,8 @@ module.exports.displayAboutpage = (req, res, next) => {
   }
 
   module.exports.processLoginMepage = (req, res, next) => {
-    passport.authenticate('local', (err, user, info) => {
+    passport.authenticate('local',
+     (err, user, info) => {
         if(err){
             return next(err);
         }
