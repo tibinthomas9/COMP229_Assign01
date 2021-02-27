@@ -6,25 +6,24 @@
 //
 var express = require('express');
 var router = express.Router();
+var indexController = require('../controllers/indexcontroller');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Tibin Thomas' });
-});
-router.get('/home', function(req, res, next) {
-  res.render('index', { title: 'Tibin Thomas' });
-});
-router.get('/aboutme', function(req, res, next) {
-  res.render('aboutme', { title: 'Tibin Thomas' });
-});
-router.get('/projects', function(req, res, next) {
-  res.render('projects', { title: 'Tibin Thomas' });
-});
-router.get('/services', function(req, res, next) {
-  res.render('services', { title: 'Tibin Thomas' });
-});
-router.get('/contactme', function(req, res, next) {
-  res.render('contactme', { title: 'Tibin Thomas' });
-});
+router.get('/', indexController.displayHomepage);
+router.get('/home', indexController.displayHomepage);
+
+router.get('/aboutme', indexController.displayAboutpage);
+
+router.get('/projects', indexController.displayProjectspage);
+
+router.get('/services', indexController.displayServicespage);
+
+router.get('/contactme', indexController.displayContactMepage);
+
+router.get('/login', indexController.displayLoginMepage);
+
+router.post('/login', indexController.processLoginMepage);
+
+
 
 module.exports = router;

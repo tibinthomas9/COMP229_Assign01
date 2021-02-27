@@ -53,7 +53,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
 
 //setup express session
-app.use(session({resave: false, saveUninitialized: false, secret: 'newseecret' })); // session secret
+app.use(session({resave: false, saveUninitialized: true, secret: 'newseecret' })); // session secret
 //intiialise passport 
 //
 app.use(flash());
