@@ -8,6 +8,8 @@ var express = require('express');
 var  mongoose  = require('mongoose');
 const passport = require('passport');
 var router = express.Router();
+var userModel = require('../models/user');
+let User = userModel.User;
 
 
 /* GET home page. */
@@ -45,8 +47,22 @@ module.exports.displayAboutpage = (req, res, next) => {
   }
 
   module.exports.processLoginMepage = (req, res, next) => {
+    console.log("login suub");
+    
+          // Users = new User({email: "tibinmutholy@gmail.com", displayName : "tibint", username : "tibint"}); 
+          // console.log("login dd");
+          // User.register(Users, "password1", function(err, user) { 
+          //   console.log("rrr");
+          //   if (err) { 
+          //     res.json({success:false, message:"Your account could  not be saved. Error: ", err})  
+          //   }else{ 
+          //     res.json({success: true, message: "Your account has     been saved"}) 
+          //   } 
+          // }); 
+
     passport.authenticate('local',
      (err, user, info) => {
+      console.log(err, user,info);
         if(err){
             return next(err);
         }
@@ -54,15 +70,21 @@ module.exports.displayAboutpage = (req, res, next) => {
             req.flash('login message', 'authentication error');
             return res.redirect('/login');
         }
+        console.log("login user suub");
         req.login(user, (err) => {
             if(err)
             {
                 return next(err);
             }
-            return res.redirect('/login');
+            return res.redirect('/home');
         });
     }) (req, res, next);
 
+// Logout
+  }
 
-  
+module.exports.performLogout = (req, res, next) => {
+  req.logout();
+  res.redirect("/");
 }
+  
