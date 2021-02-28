@@ -31,7 +31,7 @@ router.get('/projects',requireAuth, indexController.displayProjectspage);
 
 router.get('/services', requireAuth,indexController.displayServicespage);
 
-router.get('/contactme',requireAuth, indexController.displayContactMepage);
+router.get('/contactme', indexController.displayContactMepage);
 
 router.get('/login', indexController.displayLoginMepage);
 
