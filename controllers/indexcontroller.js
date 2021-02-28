@@ -1,8 +1,8 @@
 // 
-//  FileName: index.js
+//  FileName: indexcontroller.js
 //  Name: Tibin Thomas
 //  Student ID:301160586
-//  Purpose: Used to handle routing 
+//  Purpose: Controller for index route 
 //
 var express = require('express');
 var  mongoose  = require('mongoose');

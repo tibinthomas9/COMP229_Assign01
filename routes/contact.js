@@ -8,7 +8,18 @@ var express = require('express');
 var router = express.Router();
 const Contact = require('../models/contact')
 
-router.get('/', async (req, res) => {
+// helper function for guard purposes
+function requireAuth(req, res, next)
+{
+// check if the user is logged in
+if(!req.isAuthenticated())
+{
+return res.redirect('/login');
+}
+next();
+}
+
+router.get('/', requireAuth,async (req, res) => {
     console.log("contacts");
     const contactList = await Contact.find({});
     res.render('contacts', {
@@ -16,7 +27,7 @@ router.get('/', async (req, res) => {
         title: "Contacts list"
     })
 })
-router.post('/', async (req, res) => {
+router.post('/', requireAuth,async (req, res) => {
     console.log(req.body);
     console.log("contacts");
     const contactList = await Contact.find({});
@@ -33,7 +44,7 @@ router.post('/', async (req, res) => {
     });
     
 })
-router.get('/delete/:id', async (req, res) => {
+router.get('/delete/:id',requireAuth, async (req, res) => {
     try {
         const contact = await Contact.findByIdAndDelete(req.params.id);
 
@@ -48,7 +59,7 @@ router.get('/delete/:id', async (req, res) => {
     
 })
 
-router.post('/delete/:id', async (req, res) => {
+router.post('/delete/:id',requireAuth, async (req, res) => {
     try {
         const contact = await Contact.findByIdAndDelete(req.params.id);
 
@@ -61,7 +72,7 @@ router.post('/delete/:id', async (req, res) => {
     }
 })
 
-router.post('/edit/:id', async (req, res) => {
+router.post('/edit/:id',requireAuth, async (req, res) => {
     console.log(req.params.id);
     console.log(req.body);
     const contact = await Contact.findByIdAndUpdate(req.params.id, { name: req.body.firstname, number: req.body.phone, email: req.body.email }, { new: true });
@@ -71,7 +82,7 @@ router.post('/edit/:id', async (req, res) => {
 
 })
 
-router.get('/edit/:id', async (req, res) => {
+router.get('/edit/:id',requireAuth, async (req, res) => {
 
 
     const contact = await Contact.findById(req.params.id);
