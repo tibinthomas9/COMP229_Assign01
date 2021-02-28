@@ -55,20 +55,25 @@
         <!-- Contact Me Section-->
         <div class="col-sm-8">
           <h1 style="color:black;"> Message me </h1>
-          <form  action="/home" method = "get">
+          <form  action="/contacts" method = "post">
             <div class="form-row">
               <div class="col">
                 <label for="fnameText">First name</label>
-                <input type="text" class="form-control" id="fnameText" placeholder="" required> 
+                <input type="text" class="form-control" name="firstname" id="fnameText" placeholder="" required> 
               </div>
               <div class="col">
                 <label for="lnameText">Last name</label>
-                <input type="text" class="form-control" id="lnameText" placeholder="" required>
+                <input type="text" name="lastname" class="form-control" id="lnameText" placeholder="" required>
               </div>
             </div>
             <div class="form-group">
-              <label for="emailText">Email address</label>
-              <input type="email" class="form-control" id="emailText" placeholder="name@example.com" required>
+              <label for="emailText">Email Address</label>
+              <input type="email" name="email" class="form-control" id="emailText" placeholder="name@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="phoneText"> Phone</label>
+
+              <input type="number" name="phone" class="form-control" id="phoneText" placeholder="99999989" required>
             </div>
             <div class="form-group">
               <label for="messageText">Message</label>

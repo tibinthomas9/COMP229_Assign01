@@ -1,0 +1,73 @@
+<!-- 
+  FileName: contactme.ejs
+  Name: Tibin Thomas
+  Student ID:301160586
+  Purpose: Used to offer a way to contact me
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+
+  <!--Head-->
+  <%- include('../views/partials/head'); %>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <header>
+    <!--Navigation-->
+    <%- include('../views/partials/navbar', {active: "contactme" }); %>
+
+  </header>
+
+  <!--Body-->
+  <div class="h-100 d-flex justify-content-center align-items-center ">
+    <div class=" w-75 my-5 ">
+      <div class="row">
+    
+        <!-- Contact Me Section-->
+        <div class="col-sm-8">
+          <h1 style="color:black;"> Update Contact: </h1>
+          <form  action="/contacts/edit/<%= contact._id %>" method = "post">
+            <div class="form-row">
+              <div class="col">
+                <label for="fnameText">First name</label>
+                <input type="text" class="form-control" name="firstname" value="<%= contact.name %>" id="fnameText" placeholder="" required> 
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="emailText">Email Address</label>
+              <input type="email" name="email" value="<%= contact.email %>" class="form-control" id="emailText" placeholder="name@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="phoneText"> Phone</label>
+
+              <input type="number" value="<%= contact.number %>" name="phone" class="form-control" id="phoneText" placeholder="99999989" required>
+            </div>
+            <div class="text-right">
+              <button type="submit" class="btn btn-primary" >Update</button>
+              <button  class="btn btn-primary" >Cancel</button>
+              <a href="/contacts/delete/<%= contact._id %>" class="btn btn-danger">
+                <i class="fas fa-pencil-alt"></i>Delete</a>
+
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!--Footer-->
+  <footer>
+    <%- include('../views/partials/footer'); %>
+  </footer>
+  
+</body>
+
+</html>

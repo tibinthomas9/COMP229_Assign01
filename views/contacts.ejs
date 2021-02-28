@@ -1,0 +1,72 @@
+<!-- 
+  FileName: contactme.ejs
+  Name: Tibin Thomas
+  Student ID:301160586
+  Purpose: Used to offer a way to contact me
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+
+  <!--Head-->
+  <%- include('../views/partials/head'); %>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <header>
+    <!--Navigation-->
+    <%- include('../views/partials/navbar', {active: "contactme" }); %>
+
+  </header>
+
+  <!--Body-->
+  <div class="h-100 d-flex justify-content-center align-items-center ">
+    <div class=" w-75 my-5 ">
+        <div id="main-container">
+            <h1><%= title %></h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Number</th>
+                        <th scope="col">Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(var count = 0; count < contactList.length; count++) { %>
+                    <tr>
+                        <th scope="row"><%= count+1 %></th>
+                        <td><%= contactList[count].name %></td>
+                        <td><%= contactList[count].number %></td>
+                        <td><%= contactList[count].email %></td>
+                        <td>
+                            <a href="contacts/edit/<%= contactList[count]._id %>" class="btn btn-primary">
+                                <i class="fas fa-pencil-alt"></i>Edit</a>
+                        </td>
+                        <td>
+                            <a href="contacts/delete/<%= contactList[count]._id %>" class="btn btn-danger">
+                                <i class="fas fa-pencil-alt"></i>Delete</a>
+                        </td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </div>
+
+
+  <!--Footer-->
+  <footer>
+    <%- include('../views/partials/footer'); %>
+  </footer>
+  
+</body>
+
+</html>

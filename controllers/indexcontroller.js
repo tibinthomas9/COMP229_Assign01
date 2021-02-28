@@ -76,7 +76,7 @@ module.exports.displayAboutpage = (req, res, next) => {
             {
                 return next(err);
             }
-            return res.redirect('/home');
+            return res.redirect('/contacts');
         });
     }) (req, res, next);
 
