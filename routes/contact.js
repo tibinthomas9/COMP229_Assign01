@@ -37,10 +37,7 @@ router.post('/', requireAuth,async (req, res) => {
     contact.save(function (err, book) {
       if (err) return console.error(err);
       console.log(contact.name + " saved.");
-      res.render('contacts', {
-        contactList: contactList,
-        title: "Contacts list"
-    })
+      res.redirect('/contacts');
     });
     
 })
