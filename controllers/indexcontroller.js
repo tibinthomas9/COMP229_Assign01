@@ -60,6 +60,8 @@ module.exports.displayAboutpage = (req, res, next) => {
           //   } 
           // }); 
 
+          //new
+
     passport.authenticate('local',
      (err, user, info) => {
       console.log(err, user,info);
